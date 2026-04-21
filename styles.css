@@ -146,14 +146,46 @@ main {
     50% { opacity: 0.6; transform: scale(1.2); }
 }
 
-.video-wrapper {
+/* Stream Content */
+.stream-content {
+    display: flex;
+    gap: 20px;
     padding: 20px;
     background: #0f0a1a;
+}
+
+.video-wrapper {
+    flex: 1;
+    min-width: 300px;
 }
 
 .video-wrapper iframe {
     border-radius: 0;
     border: 2px solid var(--border-color);
+}
+
+.chat-wrapper {
+    flex: 0 0 350px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background: linear-gradient(90deg, var(--primary-purple) 0%, var(--dark-purple) 100%);
+    color: var(--text-light);
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.chat-wrapper iframe {
+    flex: 1;
+    border: none;
 }
 
 /* Fish Info Section */
@@ -337,6 +369,16 @@ footer p {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .stream-content {
+        flex-direction: column;
+    }
+
+    .chat-wrapper {
+        max-height: 400px;
+    }
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 2.5rem;
@@ -378,6 +420,10 @@ footer p {
 
     main {
         margin: 20px auto;
+    }
+
+    .chat-wrapper {
+        display: none;
     }
 }
 
