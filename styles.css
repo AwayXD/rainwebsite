@@ -5,8 +5,8 @@
 }
 
 :root {
-    --primary-purple: #7c3aed;
-    --dark-purple: #5b21b6;
+    --primary-purple: #6639b5;
+    --dark-purple: #401387;
     --darker-bg: #0f0a1a;
     --card-bg: #1a1028;
     --accent-violet: #a78bfa;
@@ -146,14 +146,40 @@ main {
     50% { opacity: 0.6; transform: scale(1.2); }
 }
 
-.video-wrapper {
+.stream-content {
+    display: flex;
+    gap: 20px;
     padding: 20px;
     background: #0f0a1a;
+}
+
+.video-wrapper {
+    flex: 1;
+    min-width: 0;
 }
 
 .video-wrapper iframe {
     border-radius: 0;
     border: 2px solid var(--border-color);
+    display: block;
+}
+
+.live-chat-wrapper {
+    flex: 0 0 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.live-chat-wrapper h3 {
+    color: var(--accent-violet);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.live-chat-wrapper iframe {
+    border: 2px solid var(--border-color);
+    border-radius: 0;
+    flex: 1;
 }
 
 /* Fish Info Section */
